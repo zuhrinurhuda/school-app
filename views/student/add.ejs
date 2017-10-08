@@ -2,9 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>STUDENTS DATA</title>
+    <title>STUDENT DATA</title>
   </head>
   <body>
+    <h1>STUDENT DATA</h1>
     
     <table>
       <tr>
@@ -14,8 +15,15 @@
         <td><a href="/subject">Subjects</a></td>
       </tr>
     </table>
-    
-    <h1>STUDENTS DATA</h1>
+
+    <% if (typeof errors !== 'undefined') { %>
+      <h4>PERINGATAN : </h4>
+      <ul>
+        <% errors.forEach((error) => { %>
+            <li><%= error.message %></li>
+        <% }) %>
+      </ul>
+    <% } %>
 
     <form action="/student/add" method="POST">
       First name:<br>

@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>SUBJECTS DATA</title>
+    <title>SUBJECT DATA</title>
   </head>
   <body>
-    <h1>SUBJECTS DATA</h1>
+    <h1>SUBJECT DATA</h1>
+    
     <table>
       <tr>
         <td><a href="/">Home</a></td>
@@ -15,23 +16,11 @@
       </tr>
     </table>
 
-   <table border="1px" ">
-    <tr>
-      <th>ID</th>
-      <th>Subject Name</th>
-      <th>Option</th>
-    </tr>
-    <% dataSubjects.forEach((row) => { %>
-      <tr>
-        <td><%= row.id %></td>
-        <td><%= row.subjectName %></td>
-        <td>
-          <a href="/subject/edit/<%= row.id %>">Edit</a>
-          <a> | </a>
-          <a href="/subject/delete/<%= row.id %>">Delete</a>
-        </td>
-      </tr>
-    <% })%>
-  </table> 
+    <form action="/subject/edit/<%= dataSubjects.id %>" method="POST">
+      Subject name:<br>
+      <input type="text" name="subjectName" value="<%= dataSubjects.subjectName %>">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form> 
   </body>
 </html>

@@ -5,6 +5,8 @@
     <title>STUDENTS DATA</title>
   </head>
   <body>
+    <h1>STUDENTS DATA</h1>
+
     <table>
       <tr>
         <td><a href="/">Home</a></td>
@@ -14,24 +16,24 @@
       </tr>
     </table>
 
-    <h1>STUDENTS DATA</h1>
-    
-    <h4><a href="/student/add">Add Students</a></h4>
-
    <table border="1px" ">
     <tr>
       <th>ID</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Full Name</th>
       <th>Email</th>
-      <th>Option</th>
+      <th>Actions</th>
+      <th>Options</th>
     </tr>
     <% dataStudents.forEach((row) => { %>
       <tr>
         <td><%= row.id %></td>
         <td><%= row.firstName %></td>
         <td><%= row.lastName %></td>
+        <td><%= row.getFullName()%></td>
         <td><%= row.email %></td>
+        <td><a href="/student/addsubject/<%= row.id %>">Add Subject</a></td>
         <td>
           <a href="/student/edit/<%= row.id %>">Edit</a>
           <a> | </a>
@@ -40,5 +42,7 @@
       </tr>
     <% })%>
   </table> 
+
+  <h4><a href="/student/add">Add Student</a></h4>
   </body>
 </html>

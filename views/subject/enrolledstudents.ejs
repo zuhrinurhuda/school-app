@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SUBJECTS DATA</title>
+  </head>
+  <body>
+    <h1><%= dataSubjects.subjectName %></h1>
+    <table>
+      <tr>
+        <td><a href="/">Home</a></td>
+        <td><a href="/teacher">Teachers</a></td>
+        <td><a href="/student">Students</a></td>
+        <td><a href="/subject">Subjects</a></td>
+      </tr>
+    </table>
+
+   <table border="1px" ">
+    <tr>
+      <th>ID</th>
+      <th>Student Name</th>
+      <th>Score</th>
+      <th>Desc</th>
+    </tr>
+    <% dataStudentSubjects.forEach((row) => { %>
+      <tr>
+        <th><%= row.Student.id %></th>
+        <th><%= row.Student.getFullName() %></th>
+        <th></th>
+        <th></th>
+      </tr>
+    <% }) %>
+    
+  </table> 
+
+  </body>
+</html>
