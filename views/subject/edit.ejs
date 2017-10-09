@@ -1,20 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>SUBJECT DATA</title>
-  </head>
+  <% include ../partials/head.ejs %>
   <body>
+    <% include ../partials/nav.ejs %>
+
     <h1>SUBJECT DATA</h1>
-    
-    <table>
-      <tr>
-        <td><a href="/">Home</a></td>
-        <td><a href="/teacher">Teachers</a></td>
-        <td><a href="/student">Students</a></td>
-        <td><a href="/subject">Subjects</a></td>
-      </tr>
-    </table>
 
     <form action="/subject/edit/<%= dataSubjects.id %>" method="POST">
       Subject name:<br>

@@ -1,0 +1,17 @@
+<nav>
+  <ul>
+    <li><a class="active" href="/">Home</a></li>
+
+    <li><a href="/student">Students</a></li>
+
+    <% if(role === 'headmaster' || role === '') {%>
+    <li><a href="/teacher">Teachers</a></li>
+    <% } %>
+
+    <% if(role === 'academic' || role === 'headmaster' || role === '') {%>
+    <li><a href="/subject">Subjects</a></li>
+    <% } %>
+
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+</nav>
