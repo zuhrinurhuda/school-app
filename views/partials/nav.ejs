@@ -4,11 +4,11 @@
 
     <li><a href="/student">Students</a></li>
 
-    <% if(role === 'headmaster' || role === '') {%>
+    <% if(role === 'headmaster') {%>
     <li><a href="/teacher">Teachers</a></li>
     <% } %>
 
-    <% if(role === 'academic' || role === 'headmaster' || role === '') {%>
+    <% if(role === 'academic' || role === 'headmaster') {%>
     <li><a href="/subject">Subjects</a></li>
     <% } %>
 
