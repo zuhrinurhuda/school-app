@@ -20,13 +20,20 @@ router.get('/login', function (req, res) {
 })
 
 router.post('/login', function (req, res) {
-  Model.User.findOne({where: req.body}).then((dataUser) => {
-    if (dataUser) {
+  Model.User.findOne({where: {username: req.body.username}}).then((dataUser) => {
+    if (req.body.password == dataUser.password) {
       req.session.auth = true
       req.session.username = dataUser.username
       req.session.role = dataUser.role
       console.log(req.session)
       res.render('index', {title: 'Home Page', role: req.session.role})
+    // }
+    // if (dataUser) {
+    //   req.session.auth = true
+    //   req.session.username = dataUser.username
+    //   req.session.role = dataUser.role
+    //   console.log(req.session)
+    //   res.render('index', {title: 'Home Page', role: req.session.role})
     } else {
       res.redirect('/login')
     }
